@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>LAST ROUND — 2D Tactical</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#10120f;--panel:#191d18;--line:#333b30;--muted:#9aa493;--text:#e9eee3;--lime:#c7f36b;--pink:#ff4f9a;--blue:#68c8ff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',Arial,sans-serif;min-height:100vh;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:24px 24px}button,input,select{font:inherit}button{background:#20261d;color:var(--text);border:1px solid #47513e;padding:12px 16px;cursor:pointer;letter-spacing:.04em;font-weight:700;transition:.15s}button:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-1px)}button.primary{background:var(--lime);color:#15190f;border-color:var(--lime)}button.primary:hover{background:#ddffa0;color:#111}header,footer{height:68px;padding:0 clamp(18px,5vw,72px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}footer{height:48px;border-top:1px solid var(--line);border-bottom:0;color:#65705f;font:11px 'Share Tech Mono',monospace;letter-spacing:.1em}.logo{font-weight:700;font-size:23px;letter-spacing:.09em}.logo span{color:var(--lime)}.header-right{display:flex;align-items:center;gap:20px;color:var(--lime);font:14px 'Share Tech Mono',monospace}.tag,.eyebrow,.panel-title{font:12px 'Share Tech Mono',monospace;letter-spacing:.14em;color:var(--muted)}.screen{max-width:1400px;margin:auto;padding:clamp(24px,5vw,70px) clamp(18px,5vw,72px);min-height:calc(100vh - 116px)}.hidden{display:none!important}#menu{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:clamp(30px,7vw,110px);align-items:center}.hero h1{font-size:clamp(48px,8vw,100px);line-height:.91;letter-spacing:-.07em;margin:28px 0 22px}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{max-width:480px;color:#aeb8a7;font-size:17px;line-height:1.7}.menu-buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:520px;margin-top:36px}.menu-buttons button:first-child{grid-column:1/-1;padding:18px}.side-panel,.online-card{background:linear-gradient(145deg,#1b2119,#141713);border:1px solid var(--line);padding:24px;position:relative;overflow:hidden}.panel-title{padding-bottom:18px;border-bottom:1px solid var(--line)}.brief-row{display:flex;justify-content:space-between;gap:10px;padding:15px 0;border-bottom:1px solid #293026;font-size:12px}.brief-row span{color:#879181}.brief-row b{font:12px 'Share Tech Mono',monospace}.team-t{color:#ffb36a!important}.team-ct{color:var(--blue)!important}.brief-note{font-size:11px;line-height:1.7;color:#8d9987;margin-top:18px}.pixel-art{height:130px;margin-top:12px;position:relative;background:repeating-linear-gradient(0deg,#171c15 0 17px,#20271c 17px 18px),repeating-linear-gradient(90deg,transparent 0 17px,#20271c 17px 18px);display:flex;align-items:center;justify-content:space-evenly}.pixel-soldier{width:28px;height:42px;position:relative;background:#b47c4b;image-rendering:pixelated;box-shadow:0 -13px 0 -2px #30362b,0 8px 0 -4px #6b4934}.pixel-soldier:after{content:'';position:absolute;width:34px;height:6px;top:17px;left:15px;background:#8c9783}.pixel-soldier.ct{background:#54849a;box-shadow:0 -13px 0 -2px #263b44,0 8px 0 -4px #344f5a}.crosshair{color:var(--lime);font-size:32px}.sub-screen{padding-top:34px}.sub-head{display:flex;align-items:center;gap:22px;margin-bottom:28px}.sub-head h2{font-size:clamp(22px,4vw,38px);letter-spacing:-.04em;margin:0}.back{padding:9px 12px}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.setting{background:#181d16;border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:12px;color:#cdd6c7}.setting input[type=range]{width:100%;accent-color:var(--lime)}.setting input[type=checkbox]{accent-color:var(--lime);width:18px;height:18px}.setting select,.join-row input{background:#0f120e;color:var(--text);border:1px solid #424b3b;padding:9px}.setting output{color:var(--lime);font:13px 'Share Tech Mono',monospace}.setting p,.hint{font-size:12px;line-height:1.65;color:#879181}.keybinds{grid-row:span 2}.bind-row{display:grid;grid-template-columns:1fr 48px 90px;align-items:center;gap:8px;font-size:13px}.bind-row kbd{background:#0c0f0b;padding:8px;text-align:center;border:1px solid #384133;color:var(--lime)}.bind-row button{font-size:10px;padding:7px}.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.shop-item{border:1px solid var(--line);background:#181d16;padding:18px;min-height:175px;display:flex;flex-direction:column;gap:10px}.shop-item h3{margin:0;font-size:18px}.shop-item p{margin:0;color:#8d9987;font-size:12px;line-height:1.5;flex:1}.price{color:var(--lime);font:16px 'Share Tech Mono',monospace}.shop-item button{width:100%}.online-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.online-mode{margin:16px 0;background:#11160f;border:1px solid #394332;padding:12px;display:flex;flex-direction:column;gap:9px}.online-mode select{background:#0f120e;color:var(--text);border:1px solid #424b3b;padding:10px}.online-mode p{margin:0;font-size:12px;color:#9aa493}.online-card h3{font-size:17px;letter-spacing:.04em}.online-card p{font-size:13px;color:#9aa493;line-height:1.6}.room-code{margin:20px 0;text-align:center;padding:15px;background:#0e120d;border:1px dashed #64714e;font:28px 'Share Tech Mono',monospace;color:var(--lime);letter-spacing:.25em}.join-row{display:flex;gap:8px}.join-row input{width:100%;min-width:0}.status{color:var(--lime)!important}.server-row{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line)}.server-row small{display:block;color:#7f8b79;margin-top:5px}.offline{color:#ff7777;font:12px 'Share Tech Mono',monospace}.game-screen{padding-top:16px;padding-bottom:20px;min-height:auto}.game-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font:14px 'Share Tech Mono',monospace;color:var(--lime)}.game-top button{padding:8px 10px;font-size:11px}.canvas-wrap{position:relative;width:100%;border:1px solid #48513d;background:#0b0e0a;overflow:hidden}.canvas-wrap canvas{display:block;width:100%;height:auto;image-rendering:pixelated;cursor:crosshair}.canvas-wrap #fpsCounter{position:absolute;top:10px;left:12px;color:var(--pink);font:13px 'Share Tech Mono',monospace;pointer-events:none}.hud{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}.hud>div{background:#181d16;border:1px solid var(--line);padding:11px}.hud-label{display:block;color:#7f8b79;font:10px 'Share Tech Mono',monospace;margin-bottom:7px}.hud b{font:14px 'Share Tech Mono',monospace}.overlay{position:absolute;inset:0;background:#0a0d0be8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}.overlay h2{font-size:clamp(26px,5vw,48px);margin:0}.overlay p{color:#aab5a1}.mobile-controls{display:none}#toast{position:absolute;left:50%;top:45px;transform:translateX(-50%);padding:9px 15px;background:#121710e8;border:1px solid #4e5d3d;color:var(--lime);font:12px 'Share Tech Mono',monospace;opacity:0;pointer-events:none;transition:opacity .2s}#toast.show{opacity:1}.coins-large{margin-left:auto;color:var(--lime);font:18px 'Share Tech Mono',monospace}
+@media(max-width:760px){header{height:58px}.tag{display:none}#menu{grid-template-columns:1fr;padding-top:35px;gap:30px}.hero h1{font-size:60px}.side-panel{padding:18px}.settings-grid,.online-grid{grid-template-columns:1fr}.keybinds{grid-row:auto}.shop-grid{grid-template-columns:1fr 1fr}.sub-head{flex-wrap:wrap}.sub-head h2{flex:1}.hud{grid-template-columns:repeat(3,1fr)}.hud>div{padding:8px}.hud b{font-size:12px}.mobile-controls{display:flex;gap:8px;margin-top:8px}.mobile-controls button{flex:1}footer{font-size:9px}.screen{min-height:calc(100vh - 106px)}}
+
+
+.case-modal{display:none;position:fixed;inset:0;z-index:100000;background:rgba(5,8,6,.88);align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(8px)}.case-modal.open{display:flex}.case-window{width:min(620px,100%);padding:28px;border:1px solid #65794f;background:linear-gradient(145deg,#1a2118,#0d110d);box-shadow:0 24px 100px #000;text-align:center}.case-kicker{font:11px monospace;letter-spacing:.2em;color:#a6bd84}.case-window h2{font-size:clamp(23px,5vw,38px);margin:12px 0 22px}.case-reel{display:flex;align-items:center;justify-content:center;gap:20px;min-height:100px;border:1px solid #424e37;background:#0b0e0a;margin:14px 0;padding:16px;color:#d5e6c3}.case-reel b{font-size:clamp(18px,4vw,30px)}.case-reel.spinning{animation:casePulse .22s infinite alternate}.case-reel.revealed{border-color:var(--lime);box-shadow:inset 0 0 32px #c7f36222}.case-reel.rarity-rare{border-color:#5b9dff}.case-reel.rarity-epic{border-color:#c779ff}.case-reel.rarity-legendary{border-color:#f4cb5c;box-shadow:inset 0 0 36px #f4cb5c22}.case-reel.rarity-secret{border-color:#ff4f9a;box-shadow:inset 0 0 44px #ff4f9a33}.case-window p{color:#b7c3ad}.case-window p strong{color:var(--lime)}@keyframes casePulse{from{transform:scale(.99);filter:brightness(.8)}to{transform:scale(1.01);filter:brightness(1.4)}}.skin-inventory{margin-top:28px;border-top:1px solid var(--line);padding-top:22px}.skin-inventory h3{display:flex;justify-content:space-between;letter-spacing:.1em}.skin-inventory h3 span{color:var(--lime)}.skin-inventory>p{color:var(--muted)}.skin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}.skin-card{display:flex;flex-direction:column;gap:8px;padding:12px;border:1px solid var(--line);background:#121710}.skin-card small{color:var(--muted);font-size:10px}.skin-card button{padding:8px;font-size:10px;margin-top:auto}.skin-preview{height:72px;display:grid;place-items:center;background:linear-gradient(135deg,#1d261c,#090d09);border:1px solid #313b2b}.skin-preview i{width:25px;height:42px;background:var(--skin-body);border:5px solid var(--skin-gear);border-radius:7px;box-shadow:0 -9px 0 -2px var(--skin-gear),0 0 15px color-mix(in srgb,var(--skin-body),transparent 50%)}.rarity-uncommon{border-color:#679f75}.rarity-rare{border-color:#5b9dff}.rarity-epic{border-color:#c779ff}.rarity-legendary{border-color:#d7ad43}.rarity-secret{border-color:#ff4f9a;box-shadow:0 0 12px #ff4f9a22}
+
+
+.vehicle-picker{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:18px 0 0;padding:12px;background:#151a13;border:1px solid #333b30;max-width:520px}.vehicle-picker span{font:11px monospace;color:#9aa493;letter-spacing:.12em;margin-right:auto}.vehicle-picker button{padding:9px 12px;font-size:11px}.vehicle-picker button.primary{background:#c7f36b;color:#15190f}.vehicle-picker button[aria-pressed="true"]{outline:2px solid #c7f36b;outline-offset:2px}
+
+/* Mobile controls: touch-first, thumb-friendly, no page scroll while steering. */
+.mobile-controls{display:none;align-items:center;justify-content:space-between;gap:clamp(8px,2vw,20px);padding:12px 8px;margin-top:10px;border:1px solid #303a2c;background:linear-gradient(135deg,#171d15,#0d100c);border-radius:14px;touch-action:none;user-select:none;-webkit-user-select:none}
+.mobile-stick-block{display:flex;flex-direction:column;align-items:center;gap:7px;flex:0 0 auto}
+.mobile-label,.mobile-hint{font:10px 'Share Tech Mono',monospace;letter-spacing:.08em;color:#9aa493;text-align:center}
+.virtual-stick{width:clamp(94px,25vw,132px);height:clamp(94px,25vw,132px);border-radius:50%;position:relative;background:radial-gradient(circle at 50% 45%,#394535,#20291e 65%,#11160f);border:2px solid #526148;box-shadow:inset 0 0 0 8px #1a2118,0 4px 12px #0008;touch-action:none}
+.stick-thumb{position:absolute;left:50%;top:50%;width:42%;height:42%;border-radius:50%;transform:translate(-50%,-50%);background:linear-gradient(145deg,#d8ff8b,#8fb34c);border:2px solid #efffc9;box-shadow:0 3px 10px #0009;pointer-events:none}
+.mobile-actions{display:grid;grid-template-columns:repeat(2,minmax(64px,1fr));gap:8px;flex:1;max-width:230px}
+.mobile-controls button{min-height:48px;padding:8px 6px;touch-action:none;user-select:none;-webkit-user-select:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.1;transform:none!important}
+.mobile-controls button small{font-size:8px;letter-spacing:0;line-height:1.2}
+.mobile-action{background:#20271e;border-color:#46513e;font-size:18px}
+.mobile-fire{background:#9b4236!important;border-color:#e27b66!important;color:#fff!important;font-size:14px;min-height:58px!important}
+.mobile-fire.is-pressed{background:#e35b43!important;box-shadow:0 0 0 3px #ffb19a55}
+.mobile-cannon{background:#b17b35!important;border-color:#e9c16d!important;color:#fff!important;font-size:12px;min-height:58px!important}
+@media(max-width:760px){.mobile-controls{display:flex}.canvas-wrap{touch-action:pan-y}.canvas-wrap canvas{image-rendering:auto}.game-top{gap:8px;font-size:11px}.game-top button{font-size:10px;padding:9px 8px}.game-screen{padding-left:10px;padding-right:10px}.hud{grid-template-columns:repeat(3,minmax(0,1fr))}.mobile-controls button:hover{color:#fff;border-color:inherit}}
+@media(max-width:390px){.mobile-controls{gap:5px;padding:8px 5px}.mobile-actions{gap:5px;max-width:138px}.virtual-stick{width:88px;height:88px}.mobile-controls button{min-height:43px;font-size:11px}.mobile-fire,.mobile-cannon{min-height:52px!important}.mobile-controls button small{font-size:7px}}
+@media(orientation:landscape) and (max-height:520px) and (pointer:coarse){header,footer{display:none}.screen{padding-top:8px;padding-bottom:8px}.game-screen{padding:6px}.canvas-wrap{max-height:56vh}.canvas-wrap canvas{max-height:56vh;width:auto;max-width:100%;margin:auto}.mobile-controls{padding:5px;margin-top:5px}.virtual-stick{width:76px;height:76px}.mobile-controls button{min-height:38px}.mobile-fire,.mobile-cannon{min-height:42px!important}}
+
+
+/* Phone-first controls: fit narrow screens without horizontal overflow. */
+@media (max-width: 520px) {
+  .game-screen { padding: 8px 8px 14px; }
+  .game-top { flex-wrap: wrap; }
+  .game-top > div { font-size: 11px; }
+  .canvas-wrap { width: 100%; touch-action: pan-y; }
+  .mobile-controls {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    gap: 10px 8px;
+    padding: 10px 8px;
+    margin-top: 8px;
+    width: 100%;
+  }
+  .mobile-stick-block { min-width: 0; width: 100%; }
+  .virtual-stick { width: clamp(76px, 23vw, 104px); height: clamp(76px, 23vw, 104px); }
+  .mobile-actions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 6px;
+  }
+  .mobile-controls button { min-width: 0; min-height: 48px; padding: 6px 3px; font-size: 11px; }
+  .mobile-controls button small { font-size: 7px; }
+  .mobile-fire, .mobile-cannon { min-height: 52px !important; }
+  .mobile-hint { max-width: 100%; }
+  .hud { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media (orientation: landscape) and (max-height: 520px) and (pointer: coarse) {
+  .mobile-controls { display: flex; flex-wrap: nowrap; }
+  .mobile-actions { display: grid; grid-template-columns: repeat(2,minmax(64px,1fr)); max-width: 180px; }
+  .virtual-stick { width: 76px; height: 76px; }
+}
+
+
+.weapon-switcher{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0;padding:8px;background:#11170f;border:1px solid #303a2c;border-radius:10px}
+.weapon-switcher button{flex:1 1 88px;min-width:0;padding:8px 6px;background:#20271e;border:1px solid #46513e;color:#dbe6d0;font:700 12px monospace;cursor:pointer;border-radius:5px}
+.weapon-switcher button small{display:block;font-size:9px;margin-top:3px;letter-spacing:.03em}
+.weapon-switcher button.selected{background:#c7f36b;color:#15190f;border-color:#eaffb4}
+.weapon-switcher button.locked{opacity:.42}
+.weapon-switcher button:disabled{cursor:not-allowed}
+@media(max-width:520px){.weapon-switcher{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin:6px 0;padding:6px}.weapon-switcher button{font-size:11px;padding:8px 3px}.weapon-switcher button small{font-size:8px}}
+
+/* Mobile landscape mode: full-screen battlefield, compact controls. */
+@media (orientation: landscape) and (max-height: 600px) and (pointer: coarse) {
+  html, body { width:100%; height:100%; min-height:0; overflow:hidden; overscroll-behavior:none; }
+  header, footer { display:none !important; }
+  #app, .app, main { min-height:0; }
+  #game.game-screen { position:fixed; inset:0; z-index:999; width:100vw; height:100dvh; max-width:none; min-height:0; margin:0; padding:0; overflow:hidden; background:#0b0e0a; }
+  #game .game-top { position:absolute; z-index:5; top:3px; left:4px; right:4px; margin:0; gap:4px; font-size:10px; pointer-events:none; }
+  #game .game-top button { pointer-events:auto; padding:4px 6px; font-size:9px; }
+  #game .game-top > div { font-size:9px; background:#10150dc9; padding:3px 5px; }
+  #game .canvas-wrap { position:absolute; inset:0; width:100%; height:100%; border:0; overflow:hidden; }
+  #game .canvas-wrap canvas { width:100%; height:100%; max-width:none; max-height:none; margin:0; image-rendering:auto; }
+  #game #fpsCounter { top:27px; left:5px; font-size:9px; }
+  #game .hud { position:absolute; z-index:5; top:29px; left:4px; right:4px; display:flex; gap:3px; margin:0; pointer-events:none; }
+  #game .hud > div { flex:1; min-width:0; padding:3px 4px; background:#11170fc9; }
+  #game .hud-label { font-size:7px; margin-bottom:2px; }
+  #game .hud b { font-size:9px; }
+  #game .weapon-switcher { position:absolute; z-index:7; top:58px; left:4px; right:4px; display:flex; flex-wrap:nowrap; gap:3px; margin:0; padding:3px; background:#11170fbb; }
+  #game .weapon-switcher button { flex:1 1 0; min-width:0; padding:3px 1px; font-size:9px; line-height:1; }
+  #game .weapon-switcher button small { font-size:6px; margin-top:2px; }
+  #game .mobile-controls { position:fixed; z-index:1001; left:5px; right:5px; bottom:4px; display:flex; align-items:center; justify-content:space-between; gap:6px; padding:3px; margin:0; border:0; border-radius:0; background:transparent; }
+  #game .mobile-stick-block { width:auto; flex:0 0 auto; min-width:0; }
+  #game .mobile-label, #game .mobile-hint { display:none; }
+  #game .virtual-stick { width:clamp(48px, 13vh, 66px); height:clamp(48px, 13vh, 66px); border-width:1px; box-shadow:inset 0 0 0 4px #1a2118,0 2px 5px #0008; }
+  #game .stick-thumb { width:24px; height:24px; }
+  #game .mobile-actions { display:grid; grid-template-columns:repeat(4,minmax(35px,1fr)); gap:3px; max-width:min(38vw,230px); flex:1; }
+  #game .mobile-controls button { min-width:0; min-height:31px; padding:3px 2px; font-size:9px; gap:1px; border-radius:4px; background:#20261de8; }
+  #game .mobile-controls button small { font-size:6px; }
+  #game .mobile-fire, #game .mobile-cannon { min-height:35px !important; }
+  #game .overlay { z-index:20; }
+}
+@media (orientation: portrait) and (pointer: coarse) {
+  #game .canvas-wrap canvas { image-rendering:auto; }
+  #game .mobile-controls { gap:5px; padding:5px; }
+  #game .virtual-stick { width:clamp(70px,19vw,92px); height:clamp(70px,19vw,92px); }
+  #game .mobile-controls button { min-height:39px; padding:4px 3px; font-size:10px; }
+}
+
+</style>
+</head>
+<body>
+<div id="app">
+  <header><div class="logo">LAST<span>ROUND</span></div><div class="header-right"><span class="tag">2D TACTICAL PROTOTYPE</span><span id="wallet">◈ 0</span></div></header>
+  <main id="menu" class="screen">
+    <section class="hero"><div class="eyebrow">TACTICAL COMBAT // BUILD 0.1</div><h1>CHOOSE<br><em>YOUR SIDE.</em></h1><p>Две команды. Мало укрытий. Каждый выстрел имеет значение.</p>
+      <div class="menu-buttons"><button id="playBtn" class="primary">▶ ИГРАТЬ С БОТАМИ</button><button data-panel="online">⌁ СЕТЕВАЯ ИГРА</button><button data-panel="shop">◈ МАГАЗИН</button><button data-panel="settings">⚙ НАСТРОЙКИ</button></div>
+    </section>
+    <aside class="side-panel"><div class="panel-title">ПОЛЕВОЙ БРИФИНГ</div><div class="brief-row"><span>РЕЖИМ</span><b>Командный бой</b></div><div class="brief-row"><span>ДЛИТЕЛЬНОСТЬ</span><b>30:00</b></div><div class="brief-row"><span>КОМАНДА T</span><b class="team-t">TERRORISTS</b></div><div class="brief-row"><span>КОМАНДА CT</span><b class="team-ct">COUNTER-TERRORISTS</b></div><div class="brief-note">ПРОТОТИП: локальный матч против ботов. Онлайн-панель пока демонстрирует интерфейс подключения.</div><div class="pixel-art"><div class="pixel-soldier t"></div><div class="pixel-soldier ct"></div><div class="crosshair">+</div></div></aside>
+  </main>
+  <section id="settings" class="screen hidden sub-screen"><div class="sub-head"><button class="back">← НАЗАД</button><h2>НАСТРОЙКИ</h2></div><div class="settings-grid">
+    <label class="setting">Счётчик FPS <input id="fpsToggle" type="checkbox" checked></label>
+    <label class="setting">Цвет FPS <select id="fpsColor"><option value="#ff4f9a">Розовый</option><option value="#72ff8a">Зелёный</option><option value="#66d9ff">Голубой</option><option value="#ffffff">Белый</option><option value="#ffd166">Жёлтый</option></select></label>
+    <label class="setting">Громкость музыки <output id="musicOut">35%</output><input id="musicVol" type="range" min="0" max="100" value="35"></label>
+    <label class="setting">Громкость эффектов <output id="sfxOut">70%</output><input id="sfxVol" type="range" min="0" max="100" value="70"></label>
+    <label class="setting">Чувствительность мыши <output id="sensOut">1.0×</output><input id="sens" type="range" min="3" max="20" value="10"></label>
+    <div class="setting keybinds"><b>УПРАВЛЕНИЕ</b><p>Нажми «Изменить», затем нажми новую клавишу.</p><div class="bind-row"><span>Вперёд</span><kbd id="key-forward">W</kbd><button data-bind="forward">Изменить</button></div><div class="bind-row"><span>Назад</span><kbd id="key-back">S</kbd><button data-bind="back">Изменить</button></div><div class="bind-row"><span>Влево</span><kbd id="key-left">A</kbd><button data-bind="left">Изменить</button></div><div class="bind-row"><span>Вправо</span><kbd id="key-right">D</kbd><button data-bind="right">Изменить</button></div><div class="bind-row"><span>Перезарядка</span><kbd id="key-reload">R</kbd><button data-bind="reload">Изменить</button></div><div class="bind-row"><span>Оружие / магазин</span><kbd id="key-shop">B</kbd><button data-bind="shop">Изменить</button></div></div>
+    <div class="setting"><b>ПОДСКАЗКА</b><p>WASD — движение, мышь — прицел, ЛКМ — огонь, R — перезарядка, B — магазин. Настройки хранятся в этом браузере.</p></div>
+  </div></section>
+  <section id="shop" class="screen hidden sub-screen"><div class="sub-head"><button class="back">← НАЗАД</button><h2>АРСЕНАЛ / МАГАЗИН</h2><div class="coins-large" id="shopWallet">◈ 0</div></div><div id="shopItems" class="shop-grid"></div><div class="hint">Снайперская винтовка стоит 500 монет, RPG — 100 монет. FPV-дрон стоит 1000 монет; после покупки запускается клавишей 6 или кнопкой ДРОН.</div></section>
+  <section id="online" class="screen hidden sub-screen"><div class="sub-head"><button class="back">← НАЗАД</button><h2>СЕТЕВАЯ ИГРА</h2></div><div class="online-grid"><div class="online-card"><h3>КОМНАТА С ДРУЗЬЯМИ</h3><p>Создай комнату с кодом или введи код друга.</p><label class="setting online-mode">РЕЖИМ СЕТЕВОЙ ИГРЫ <select id="onlineMode"><option value="soldier">Солдаты — только солдаты</option><option value="tank">Танки — только танки</option></select><p>Комнаты разделены по режиму: игроки на танках не попадут в матч солдат и наоборот.</p></label><button id="createRoom" class="primary">СОЗДАТЬ КОМНАТУ</button><div id="roomCode" class="room-code">------</div><div class="join-row"><input id="joinCode" maxlength="6" placeholder="КОД КОМНАТЫ"><button id="joinRoom">ПОДКЛЮЧИТЬСЯ</button></div><p id="onlineStatus" class="status">Сервер пока не подключён.</p></div><div class="online-card"><h3>ПУБЛИЧНЫЕ СЕРВЕРЫ</h3><div class="server-row"><span><b>EUROPE / TEST</b><small>Тестовый список</small></span><span class="offline">OFFLINE</span></div><div class="server-row"><span><b>COMMUNITY #01</b><small>Публичный матч</small></span><span class="offline">OFFLINE</span></div><p class="hint">Для настоящей игры по сети нужно запустить сервер из папки проекта и добавить синхронизацию игроков.</p></div></div></section>
+  <section id="game" class="screen hidden game-screen"><div class="game-top"><button id="leaveBtn">⟵ В МЕНЮ</button><div><span id="teamBadge" class="team-t">TEAM T</span> <span id="timer">30:00</span></div><div id="gameWallet">◈ 0</div></div><div class="canvas-wrap"><canvas id="gameCanvas" width="1200" height="720"></canvas><div id="fpsCounter">FPS: --</div><div id="toast"></div><div id="gameOver" class="overlay hidden"><h2>МАТЧ ЗАВЕРШЁН</h2><p id="finalStats"></p><button id="againBtn" class="primary">ЕЩЁ РАЗ</button><button id="gameMenuBtn">В МЕНЮ</button></div></div><div class="hud"><div><span class="hud-label">ЗДОРОВЬЕ</span><b id="health">100</b></div><div><span class="hud-label">ОРУЖИЕ</span><b id="weaponName">ПИСТОЛЕТ</b></div><div><span class="hud-label">ПАТРОНЫ</span><b id="ammo">12 / 48</b></div><div><span class="hud-label">МИНИ-РАУНД / СЧЁТ</span><b id="score">0 — 0</b></div><div><span class="hud-label">ЗОНА</span><b id="zoneName">MAIN</b></div></div><div id="weaponSwitcher" class="weapon-switcher" aria-label="Выбор оружия">
+  <button type="button" data-slot="1" title="1 — Пистолет">1 <small>ПИСТОЛЕТ</small></button>
+  <button type="button" data-slot="2" title="2 — Дробовик">2 <small>ДРОБОВИК</small></button>
+  <button type="button" data-slot="3" title="3 — Автомат">3 <small>АВТОМАТ</small></button>
+  <button type="button" data-slot="4" title="4 — Снайперка">4 <small>СНАЙПЕРКА</small></button>
+  <button type="button" data-slot="5" title="5 — RPG">5 <small>RPG</small></button>
+  <button type="button" data-slot="6" title="6 — FPV-дрон">6 <small>FPV-ДРОН</small></button>
+</div>
+<div class="mobile-controls" id="mobileControls" aria-label="Сенсорное управление">
+  <div class="mobile-stick-block"><span class="mobile-label">ДВИЖЕНИЕ</span><div class="virtual-stick" id="moveStick" aria-label="Джойстик движения"><span class="stick-thumb" id="moveThumb"></span></div></div>
+  <div class="mobile-actions">
+    <button id="mobileReload" class="mobile-action">↻<small>ПЕРЕЗАРЯДКА</small></button>
+    <button id="mobileFire" class="mobile-fire">ОГОНЬ</button>
+    <button id="mobileCannon" class="mobile-cannon">ПУШКА<br><small>ПРОБЕЛ</small></button>
+    <button id="mobileShop" class="mobile-action">▦<small>МАГАЗИН</small></button>
+  </div>
+  <div class="mobile-stick-block"><span class="mobile-label">ПРИЦЕЛ</span><div class="virtual-stick aim-stick" id="aimStick" aria-label="Джойстик прицеливания"><span class="stick-thumb" id="aimThumb"></span></div><span class="mobile-hint">Удерживай ОГОНЬ</span></div>
+</div></section>
+  <footer><span>LAST ROUND © PROTOTYPE</span><span>NO PAY-TO-WIN. JUST AIM.</span></footer>
+</div><script src="game.js" defer></script>
+</body></html>
